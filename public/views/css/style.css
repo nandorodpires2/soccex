@@ -1,54 +1,101 @@
-body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+/*!
+ * Start Bootstrap - Stylish Portfolio Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+/* reset de margens */
+* {
+    margin: 0;
+    padding:0;
+}
+ 
+/* para garantir que estes elementos ocuparão toda a tela */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Tahoma, sans-serif;
+}
+ 
+ul, ol {
+    list-style: none;
+
 }
 
-#content {
-    
+#fundo-externo {
+    overflow: hidden; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
+    width: 100%;
+    height: 100%;
+    position: relative; /* criamos um contexto para posicionamento */
+}
+ 
+#fundo {
+    position: fixed; /* posição fixa para que a possível rolagem da tela não revele espaços em branco */
+    width: 100%;
+    height: 100%;
+    background: url(../img/soccer_fans.jpeg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+ 
+#fundo img {
+    width: 100%; /* com isso imagem ocupará toda a largura da tela. Se colocarmos height: 100% também, a imagem irá distorcer */
+    position: absolute;
+}
+ 
+.site {
+    //position: absolute;    
+    //top: 50px;
+    margin: 30px 0;
+    padding: 15px;
+    width: 100%;
+    background: #FFF; /* fundo branco para navegadores que não suportam rgba */
+    background: rgba(255,255,255,0.8); /* fundo branco com um pouco de transparência */
+}
+ 
+p {
+    margin-bottom: 1.5em;
 }
 
-dd {
-    margin-bottom: 7px;
+.bolder {
+    font-weight: bolder;
 }
 
-.zf-green {
-    color: #68b604;
+.redes-sociais {
+    margin: 3px 8px;
 }
 
-.btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
-  background-image: -ms-linear-gradient(top, #70d900, #57a900);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-  background-image: -o-linear-gradient(top, #70d900, #57a900);
-  background-image: linear-gradient(top, #70d900, #57a900);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+/* ALERTS */
+.alert {
+    border-radius: 0;
+    padding: 7px;
 }
 
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-  background-color: #57a900;
+/* FORMS */
+.form-group {
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
-.btn-success:active, .btn-success.active {
-  background-color: #57a900;
+/**/
+.btn-radio {
+    width: 100%;
+}
+.img-radio {
+    margin-bottom: 5px;
+    margin-top: 10px;
 }
 
-div.container a.brand {
-    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
-    margin-left: 0;
-    padding: 8px 20px 12px 40px;
+.space-20 {
+    margin-top: 20px;
 }
 
-footer a {
-    padding: 0 5px;    
-}
-
-footer a:hover {
-    color: #696969;
-    text-decoration: none;
+/* */
+.box-times {
+    max-height: 220px;
+    overflow-y: auto;
 }
