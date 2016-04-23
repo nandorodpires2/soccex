@@ -11,12 +11,26 @@
  *
  * @author Fernando
  */
-class Model_DbTable_Time extends Zend_Db_Table_Abstract {
+class Model_DbTable_Time extends Model_DbTable_Abstract {
 
     protected $_name = "time";
     
     protected $_primary = "time_id";
     
+    protected function getQueryAll() {
+        $select = parent::getQueryAll();
+        $select->order("time_nome asc");
+        return $select;
+    }
+
+    public function getTimesByDivisao($divisao) {
+        $select = $this->getQueryAll()
+                ->where("time_divisao = ?", $divisao)
+                ->where("time_ativo = ?", 1);
+        
+        return $this->fetchAll($select);
+    }
+
     public function fetchPairs() {
         $options = array();
         

@@ -96,6 +96,6 @@ p {
 
 /* */
 .box-times {
-    max-height: 220px;
+    max-height: 200px;
     overflow-y: auto;
 }

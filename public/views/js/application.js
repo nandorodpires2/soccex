@@ -17,7 +17,7 @@ $(document).ready(function(){
         $("#box-cadastro").css("height", box_cadastro_height);
     }
         
-    $('.btn-radio, img').click(function(e) {
+    $('.btn-radio').click(function(e) {
         
         var time_id = $(this).parent().attr("id");
         $("#time_id").val(time_id);                
