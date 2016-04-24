@@ -15,4 +15,28 @@
             </a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="col-md-10">Time</th>
+                            <th class="col-md-1">Divisão</th>
+                            <th class="col-md-1">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($this->times as $time) : ?>
+                        <tr>
+                            <td><?php echo $time->time_nome; ?></td>
+                            <td><?php echo $time->time_divisao; ?></td>
+                            <td></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

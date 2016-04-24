@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of TimeController
+ * Description of ContatoController
  *
  * @author Fernando
  */
-class Admin_TimeController extends Zend_Controller_Action {
+class Site_ContatoController extends Zend_Controller_Action {
     
     public function init() {
         
@@ -19,39 +19,33 @@ class Admin_TimeController extends Zend_Controller_Action {
     
     public function indexAction() {
         
-        $modelTime = new Model_DbTable_Time();
-        $times = $modelTime->fetchAll();
-        $this->view->times = $times;
-        
-    }
-    
-    public function cadastroAction() {
-        
-        $form = new Form_Admin_TimeCadastro();
+        // form
+        $form = new Form_Site_Contato();
         $this->view->form = $form;
         
-        if ($this->getRequest()->isPost()){
+        if ($this->getRequest()->isPost()) {
             $data = $this->getRequest()->getPost();
             if ($form->isValid($data)) {
                 $data = $form->getValues();
                 
                 try {
                     
-                    $modelTime = new Model_DbTable_Time();
-                    $modelTime->insert($data);
+                    $modelContato = new Model_DbTable_Contato();
+                    $modelContato->insert($data);
+                    
+                    // envia o email
                     
                     $this->_helper->flashMessenger->addMessage(array(
-                        'success' => 'Time cadastrado'
+                        'success' => 'Sua mensagem foi enviada com sucesso'
                     ));
-                    
-                    $this->_redirect("admin/time");
                     
                 } catch (Exception $ex) {
                     $this->_helper->flashMessenger->addMessage(array(
                         'danger' => $ex->getMessage()
                     ));
-                    $this->_redirect("admin/time/cadastro");
                 }
+                
+                $this->_redirect("/");
                 
             }
         }

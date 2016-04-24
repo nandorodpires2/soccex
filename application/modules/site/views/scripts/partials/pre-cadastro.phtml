@@ -42,7 +42,12 @@
                                   <li role="presentation">
                                       <a href="#serie-b" aria-controls="profile" role="tab" data-toggle="tab">Série B</a>
                                   </li>
-                                  
+                                  <li role="presentation">
+                                      <a href="#serie-c" aria-controls="profile" role="tab" data-toggle="tab">Série C</a>
+                                  </li>
+                                  <li role="presentation">
+                                      <a href="#serie-d" aria-controls="profile" role="tab" data-toggle="tab">Série D</a>
+                                  </li>
                                 </ul>
                                 
                                 <!-- Tab panes -->
@@ -64,7 +69,25 @@
                                             <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
                                         </div>
                                         <?php endforeach; ?>
-                                    </div>                                    
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="serie-c">
+                                        <?php foreach ($this->times(3) as $time) : ?>
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="<?php echo $time->time_id; ?>">
+                                            <img alt="<?php echo $time->time_nome; ?>" src="<?php echo $this->baseUrl("views/img/times/" . $time->time_escudo); ?>" class="img-responsive img-radio center-block">
+                                            <button type="button" class="btn btn-sm btn-primary btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
+                                            <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
+                                        </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="serie-d">
+                                        <?php foreach ($this->times(4) as $time) : ?>
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="<?php echo $time->time_id; ?>">
+                                            <img alt="<?php echo $time->time_nome; ?>" src="<?php echo $this->baseUrl("views/img/times/" . $time->time_escudo); ?>" class="img-responsive img-radio center-block">
+                                            <button type="button" class="btn btn-sm btn-primary btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
+                                            <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
+                                        </div>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                             </div>        
                         </div>
