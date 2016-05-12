@@ -1,0 +1,56 @@
+<div id="fundo-externo">
+    <div id="fundo"></div>
+</div>
+<div class="container-fluid">    
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <a href="<?php echo $this->url(array('controller' => 'index')); ?>">
+                <img src="<?php echo $this->baseUrl('views/img/logo.png'); ?>" class="img img-responsive center-block"/>
+            </a>
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <div class="site">
+                <h3>A Rede Social do Futebol</h3>
+                <p>Faça seu cadastro grátis</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="site">
+                <?php echo $this->messages; ?> 
+                <form method="<?php echo $this->form->getMethod(); ?>" enctype="application/x-www-form-urlencoded">
+                    <div class="row"> 
+                        <div class="form-group">
+                        <?php echo $this->form->time_id; ?>
+                        <div  style="height: 250px; overflow-y: scroll; border-bottom: 2px solid #dcdcdc">
+                            <?php foreach ($this->times() as $time) : ?>
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="<?php echo $time->time_id; ?>">
+                                <img alt="<?php echo $time->time_nome; ?>" src="<?php echo $this->baseUrl("views/img/times/" . $time->time_escudo); ?>" class="img-responsive img-radio center-block">
+                                <button type="button" class="btn btn-sm btn-info btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
+                                <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
+                            </div>                                
+                            <?php endforeach; ?>
+                        </div>                  
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <?php echo $this->form->perfil_email; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <?php echo $this->form->submit; ?>                                                        
+                        </div>
+                    </div>                    
+                </form>
+                <p class="small">* Campos obrigatórios</p>
+            </div>
+        </div>
+    </div>
+</div>

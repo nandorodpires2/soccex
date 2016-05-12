@@ -62,7 +62,7 @@ class Form_Site_Contato extends Zend_Form {
         // submit
         $submit = new Zend_Form_Element_Submit("submit");
         $submit->setLabel("Enviar");
-        $submit->setAttrib('class', 'btn btn-primary btn-block');
+        $submit->setAttrib('class', 'btn btn-success btn-block');
         $this->addElement($submit);
         
     }

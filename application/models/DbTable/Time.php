@@ -19,14 +19,17 @@ class Model_DbTable_Time extends Model_DbTable_Abstract {
     
     protected function getQueryAll() {
         $select = parent::getQueryAll();
-        $select->order("time_nome asc");
+        $select->order("time_divisao ASC");
+        $select->order("time_nome ASC");
         return $select;
     }
 
-    public function getTimesByDivisao($divisao) {
-        $select = $this->getQueryAll()
-                ->where("time_divisao = ?", $divisao)
-                ->where("time_ativo = ?", 1);
+    public function getTimesByDivisao($divisao = null) {
+        $select = $this->getQueryAll()->where("time_ativo = ?", 1);
+        
+        if ($divisao) {
+            $select->where("time_divisao = ?", $divisao);
+        }       
         
         return $this->fetchAll($select);
     }

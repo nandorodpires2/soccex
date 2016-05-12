@@ -55,9 +55,12 @@ class Form_Site_Cadastro extends Zend_Form {
             'placeholder' => 'Informe o e-mail'
         ));
         $perfilEmail->setRequired();
+        /*
         $perfilEmail->addErrorMessages(array(
             Zend_Validate_EmailAddress::INVALID => "Email inválido!"
         ));
+         * 
+         */
         $perfilEmail->setDecorators(Form_Decorator::$simpleElementDecorators);
         $perfilEmail->addValidators(array(
             new Form_Validators_Email(),
@@ -68,7 +71,7 @@ class Form_Site_Cadastro extends Zend_Form {
         // submit
         $submit = new Zend_Form_Element_Submit("submit");
         $submit->setLabel("CADASTRAR");
-        $submit->setAttrib("class", "btn btn-primary btn-block");
+        $submit->setAttrib("class", "btn btn-success btn-block");
         $this->addElement($submit);
         
     }

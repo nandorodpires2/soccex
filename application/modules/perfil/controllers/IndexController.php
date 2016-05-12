@@ -1,15 +1,12 @@
 <?php
 
-class Perfil_IndexController extends Zend_Controller_Action
-{
+class Perfil_IndexController extends Zend_Controller_Action {
 
-    public function init()
-    {
-        
+    public function init() {
+        $this->_redirect("perfil/posts/");
     }
 
-    public function indexAction()
-    {
+    public function indexAction() {
         
     }
 

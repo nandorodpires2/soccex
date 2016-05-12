@@ -1,1 +1,34 @@
-
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Times X Perfil</div>
+                <div class="panel-body">
+                    <?php if ($this->report->count() > 0) : ?>
+                    <table class="table">
+                        <?php foreach ($this->report as $report) : ?>
+                        <tr>
+                            <td class="col-md-6">
+                                <label><?php echo $report->time_nome; ?></label>
+                            </td>
+                            <td class="col-md-6 text-center">
+                                <span class="badge">
+                                    <label><?php echo $report->cadastros; ?></label>
+                                </span>
+                            </td>
+                        </tr>                        
+                        <?php endforeach; ?>
+                    </table>
+                    <?php else : ?>
+                    <div class="alert alert-warning">Nenhum registro</div>
+                    <?php endif; ?>
+                </div>
+                <div class="panel-footer text-center">
+                    <h4>
+                        <span>TOTAL: <?php echo $this->total; ?></span>
+                    </h4>
+                </div>
+            </div>
+        </div>             
+    </div>
+</div>

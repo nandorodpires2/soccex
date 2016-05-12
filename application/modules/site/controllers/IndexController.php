@@ -3,6 +3,13 @@
 class Site_IndexController extends Zend_Controller_Action {
 
     public function init() {
+        $mobileDetect = new Mobile_MobileDetect();
+        $is_mobile = $mobileDetect->isMobile();
+        
+        //$is_mobile = true;
+        if ($is_mobile) {
+            $this->_redirect("mobile/");
+        }
         
     }
 

@@ -48,7 +48,7 @@ class Model_DbTable_Abstract extends Zend_Db_Table_Abstract {
         return $this->fetchRow($select);
     }
     
-    public function getCount($ativo = 1, $where = null) {        
+    public function getCount($where = null) {        
         $select = $this->select()
                 ->from(array($this->_name), array(
                     'count' => new Zend_Db_Expr("count(*)")

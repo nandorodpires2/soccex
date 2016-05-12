@@ -13,8 +13,8 @@
  */
 class Zend_View_Helper_Times extends Zend_View_Helper_Abstract {
     
-    public function times($divisao) {        
-        $modelTime = new Model_DbTable_Time();
+    public function times($divisao = null) {        
+        $modelTime = new Model_DbTable_Time();        
         $times = $modelTime->getTimesByDivisao($divisao);        
         return $times;
     }

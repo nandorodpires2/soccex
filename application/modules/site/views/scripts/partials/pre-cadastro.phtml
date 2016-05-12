@@ -3,21 +3,29 @@
 </div>
 <div class="container">    
     <div class="row">
-        <div class="col-lg-12" style="color: #FFF">
-            <h1>LOGO</h1>            
+        <div class="col-lg-12">
+            <a href="<?php echo $this->url(array('controller' => 'index')); ?>">
+                <img src="<?php echo $this->baseUrl('views/img/logo.png'); ?>" class="img img-responsive"/>
+            </a>
         </div>
     </div>    
     <div class="row">
         <div class="col-lg-6">
             <div class="site" id="box-info">
-                <p class="bolder">Chegou a rede social para os amantes do futebol!</p>
-                <p>
-                    O Soccex é uma plataforma para você que gosta do futebol, não 
-                    perder a oportunidade de zoar seu amigo quando o time dele
+                <h2>Chegou a rede social para os amantes do futebol!</h2>
+                <p style="text-align: justify; font-size: 16px;">
+                    O Socexx é uma plataforma para você que gosta do futebol, não 
+                    perde a oportunidade de zoar seu amigo quando o time dele
                     perde e adora dar "pitacos" nos jogos da rodada.
                 </p>
-                <p class="bolder">
+                <h3>
                     Faça seu cadastro! Em breve muitas novidades!
+                </h3><hr />
+                <p class="text-center">
+                    Quer saber mais?
+                </p>
+                <p class="text-center">
+                    <a class="btn btn-primary" href="<?php echo $this->url(array('controller' => 'contato')); ?>">FAÇA CONTATO</a>
                 </p>
             </div>
         </div>
@@ -56,7 +64,7 @@
                                         <?php foreach ($this->times(1) as $time) : ?>
                                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="<?php echo $time->time_id; ?>">
                                             <img alt="<?php echo $time->time_nome; ?>" src="<?php echo $this->baseUrl("views/img/times/" . $time->time_escudo); ?>" class="img-responsive img-radio center-block">
-                                            <button type="button" class="btn btn-sm btn-primary btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
+                                            <button type="button" class="btn btn-sm btn-info btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
                                             <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
                                         </div>
                                         <?php endforeach; ?>
@@ -65,7 +73,7 @@
                                         <?php foreach ($this->times(2) as $time) : ?>
                                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="<?php echo $time->time_id; ?>">
                                             <img alt="<?php echo $time->time_nome; ?>" src="<?php echo $this->baseUrl("views/img/times/" . $time->time_escudo); ?>" class="img-responsive img-radio center-block">
-                                            <button type="button" class="btn btn-sm btn-primary btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
+                                            <button type="button" class="btn btn-sm btn-info btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
                                             <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
                                         </div>
                                         <?php endforeach; ?>
@@ -74,19 +82,13 @@
                                         <?php foreach ($this->times(3) as $time) : ?>
                                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="<?php echo $time->time_id; ?>">
                                             <img alt="<?php echo $time->time_nome; ?>" src="<?php echo $this->baseUrl("views/img/times/" . $time->time_escudo); ?>" class="img-responsive img-radio center-block">
-                                            <button type="button" class="btn btn-sm btn-primary btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
+                                            <button type="button" class="btn btn-sm btn-info btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
                                             <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
                                         </div>
                                         <?php endforeach; ?>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="serie-d">
-                                        <?php foreach ($this->times(4) as $time) : ?>
-                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" id="<?php echo $time->time_id; ?>">
-                                            <img alt="<?php echo $time->time_nome; ?>" src="<?php echo $this->baseUrl("views/img/times/" . $time->time_escudo); ?>" class="img-responsive img-radio center-block">
-                                            <button type="button" class="btn btn-sm btn-primary btn-radio" id="btn-<?php echo $time->time_id; ?>">Escolher</button>           
-                                            <input type="checkbox" id="chk-<?php echo $time->time_id; ?>" class="hidden">
-                                        </div>
-                                        <?php endforeach; ?>
+                                        <div class="alert alert-warning">EM BREVE</div>                                        
                                     </div>
                                 </div>
                             </div>        
@@ -105,6 +107,7 @@
                         </div>
                     </div>                    
                 </form>
+                <p class="small">* Campos obrigatórios</p>
             </div>
         </div>
     </div>  
@@ -113,8 +116,8 @@
             <div class="site">
                 <p>Curta nossa redes sociais</p>
                 <p>
-                    <a href="" class="redes-sociais"><i class="fa fa-facebook-square fa-4x"></i></a>
-                    <a href="" class="redes-sociais"><i class="fa fa-twitter-square fa-4x"></i></a>
+                    <a href="https://www.facebook.com/socexx/" target="_blank" class="redes-sociais"><i class="fa fa-facebook-square fa-4x"></i></a>
+                    <!--<a href="" class="redes-sociais"><i class="fa fa-twitter-square fa-4x"></i></a>-->
                 </p>
             </div>
         </div>

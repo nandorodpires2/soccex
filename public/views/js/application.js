@@ -22,8 +22,10 @@ $(document).ready(function(){
         var time_id = $(this).parent().attr("id");
         $("#time_id").val(time_id);                
         
-        $('.btn-radio').not(this).removeClass('active btn-success').siblings('input').prop('checked',false).siblings('.img-radio').css('opacity','0.5');
-    	$(this).addClass('active btn-success').siblings('input').prop('checked',true).siblings('.img-radio').css('opacity','1');
+        $('.btn-radio').not(this).removeClass('active btn-success').addClass('btn-info').siblings('input').prop('checked',false).siblings('.img-radio').css('opacity','0.5');
+    	$(this).addClass('active btn-success').removeClass('btn-info').siblings('input').prop('checked',true).siblings('.img-radio').css('opacity','1');
+        
+        $("#perfil_email").focus();
         
     });
         

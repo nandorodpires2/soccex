@@ -34,6 +34,7 @@ class Site_ContatoController extends Zend_Controller_Action {
                     $modelContato->insert($data);
                     
                     // envia o email
+                    $pluginMail = new Plugin_Mail();
                     
                     $this->_helper->flashMessenger->addMessage(array(
                         'success' => 'Sua mensagem foi enviada com sucesso'

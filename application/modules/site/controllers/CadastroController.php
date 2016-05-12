@@ -36,6 +36,9 @@ class Site_CadastroController extends Zend_Controller_Action {
                     $modelPerfil->insert($data);
                     
                     // envia email de confirmacao
+                    $pluginMail = new Plugin_Mail();
+                    $pluginMail->send("padrao.phtml", "Cadastro recebido", $data['perfil_email']);
+                    //$pluginMail->send("padrao.phtml", "Cadastro recebido", "nandorodpires@gmail.com");
                     
                     // mensagem
                     $this->_helper->flashMessenger->addMessage(array(

@@ -35,7 +35,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $mail_config = array(            
             'auth' => $config->mail->auth,        
             'username' => $config->mail->username,
-            'password' => $config->mail->password
+            'password' => $config->mail->password,
+            'ssl' => $config->mail->ssl,
+            'port' => $config->mail->port
         );
         
         $transport = new Zend_Mail_Transport_Smtp($config->mail->host, $mail_config);              
@@ -53,6 +55,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	$controllerFront = Zend_Controller_Front::getInstance();
         $controllerFront->registerPlugin(new Plugin_Message());
         $controllerFront->registerPlugin(new Plugin_Layout());
+        $controllerFront->registerPlugin(new Plugin_Auth());
     }
     
     /**
